@@ -15,14 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include,path
-
+from django.urls import include, path
 from demoapp import views
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #execute on the homepage so I can just replace the word admin with an empty string
-    #
-    path('', views.index, name = 'index'),#http://127.0.0.1:8000/ view.index function be called
-    #path('demo/', include('demoapp.urls')), use this way by create urls.py in demoapp and add path('demo/', include('demoapp.urls')) in demoproject\urls.py
+    #map url to view function
+    path('',include('demoapp.urls')), #access app level urls
 ]
 #http://127.0.0.1:8000/admin/ admin page
