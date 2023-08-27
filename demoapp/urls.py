@@ -1,4 +1,4 @@
-from django.urls import path 
+from django.urls import path , re_path
 from . import views  #in same directory use .
 
 urlpatterns = [ 
@@ -8,4 +8,8 @@ urlpatterns = [
     path('home/',views.home), #(http://127.0.0.1:8000/home, home function in views.py)
     path('display_date/',views.display_date), 
     path('menu/',views.menu),
+    #path('loader/',views.loader),
+    path('ServerStatus/',views.ServerStatus),
+    path('dishes/<str:dish>',views.menuitems),#http://127.0.0.1:8000/dishes/pasta
+    path('getuser/', views.qryview, name='qryview'),#http://127.0.0.1:8000/getuser/?name=John&id=1
 ] 

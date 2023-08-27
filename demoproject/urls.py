@@ -25,3 +25,4 @@ urlpatterns = [
     path('',include('demoapp.urls')), #access app level urls
 ]
 #http://127.0.0.1:8000/admin/ admin page
+
