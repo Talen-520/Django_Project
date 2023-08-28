@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e$z62rl+8_1@jx_!mb(t0_k+y7q+7pz%jl*lqcl2cs2n!t4ts9'
 
 # SECURITY WARNING: don't run with debug turned on in production!生产环境要设置False
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []#0.0.0.0:8000 make the site running on localhost externally visible
+ALLOWED_HOSTS = ['*']#0.0.0.0:8000 make the site running on localhost externally visible
 
 
 # Application definition

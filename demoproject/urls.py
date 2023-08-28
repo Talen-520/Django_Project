@@ -26,3 +26,4 @@ urlpatterns = [
 ]
 #http://127.0.0.1:8000/admin/ admin page
 
+handler404 = 'demoproject.views.handler404'
