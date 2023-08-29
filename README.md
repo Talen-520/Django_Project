@@ -1,6 +1,47 @@
 # Django_Project
 
 ### Demo havent uplodade yet , working on it...
+model form:
+
+http://127.0.0.1:8000/home
+
+url pattern:
+
+http://127.0.0.1:8000/dishes/<str:dish>
+
+items = {
+        'pasta':'pasta with red sauce',
+        'falafel':'falafel with hummus',
+        'cheesecake':'cheesecake with cherry topping',
+    }
+
+query URL:
+
+http://127.0.0.1:8000/getuser/?
+
+http://127.0.0.1:8000/getuser/?name=John&id=1
+
+Attributes 
+
+http://127.0.0.1:8000/attributes
+
+date:
+
+http://127.0.0.1:8000/display_date
+
+serverStatus:
+
+http://127.0.0.1:8000/ServerStatus
+
+
+
+
+
+
+
+
+
+# hands on guidance 
 
 # create virtual environment 
 
