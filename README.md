@@ -1,6 +1,6 @@
 # Django_Project
 
-### Demo havent uplodade yet , working on it...
+### Project in progress, havent deploy to server yet , working on it...
 model form:
 
 http://127.0.0.1:8000/home
