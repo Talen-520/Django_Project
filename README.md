@@ -2,46 +2,47 @@
 
 ### Project in progress, havent deploy to server yet , working on it...
 
-survey form:
+### survey form:
 
-http://127.0.0.1:8000/survey/
+> http://127.0.0.1:8000/survey/
 
-![image](https://github.com/Talen-520/Django_Project/assets/63370853/70175821-e838-47e2-a44c-763891bc59c3)
+https://github.com/Talen-520/Django_Project/assets/63370853/64c34c81-cf60-4810-a5bc-ed0f8be197f9
 
-model form:
+### model form:
 
-http://127.0.0.1:8000/home
+> http://127.0.0.1:8000/home
 
-url pattern:
+### url pattern:
 
-http://127.0.0.1:8000/dishes/<str:dish>
-
+>http://127.0.0.1:8000/dishes/<str:dish>
+```
 items = {
         'pasta':'pasta with red sauce',
         'falafel':'falafel with hummus',
         'cheesecake':'cheesecake with cherry topping',
     }
+```
+### query URL:
 
-query URL:
+> http://127.0.0.1:8000/getuser/?
 
-http://127.0.0.1:8000/getuser/?
+> http://127.0.0.1:8000/getuser/?name=John&id=1
 
-http://127.0.0.1:8000/getuser/?name=John&id=1
+### Attributes 
 
-Attributes 
+> http://127.0.0.1:8000/attributes
 
-http://127.0.0.1:8000/attributes
+### date:
 
-date:
+> http://127.0.0.1:8000/display_date
 
-http://127.0.0.1:8000/display_date
+### serverStatus:
 
-serverStatus:
+> http://127.0.0.1:8000/ServerStatus
 
-http://127.0.0.1:8000/ServerStatus
+# text generation model
 
-
-
+>
 
 
 
