@@ -35,19 +35,22 @@ class LogForm(forms.ModelForm):
         model = Logger
         fields = '__all__' #import all fields from model
             #or customized fields with ['first_name', 'last_name', 'time_log']
+
+
+#reservations form has no html presented, in the admin page, it is presented in a table
 from .models import survey   
 from django.core.validators import RegexValidator
 class surveyForm(forms.ModelForm):
     phone = forms.CharField(
         label="Phone number:",
-        max_length=13,
+        max_length=10,
         validators=[
             RegexValidator(
-                regex=r'^\+1[0-9]{11}$',
+                regex=r'^[0-9]{10}$',
                 message="Enter a valid US phone number starting with +1.",
             ),
         ],
-            widget=forms.TextInput(attrs={'placeholder': '(+1) 0123456789'}),
+            widget=forms.TextInput(attrs={'placeholder': '0123456789'}),
         )
     comments = forms.CharField(
         widget=forms.Textarea(attrs={'rows': 5, 'placeholder': 'Enter your comments here'}),

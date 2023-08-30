@@ -1,52 +1,136 @@
-/* survey.css */
+/* styles.css */
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
+/* Define custom properties */
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  
+  /* Reset default styles */
+  body {
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
-}
-
-.form-container {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.form-container p {
-    margin: 0 0 15px;
-}
-
-.form-container form {
-    background-color: bisque;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-.form-container form input[type="text"],
-.form-container form input[type="email"],
-.form-container form input[type="tel"],
-.form-container form textarea {
-    width: 100%;
-    box-sizing: border-box; /* Include padding and border in the width calculation */
-    padding: 10px;
-    margin: 5px 0; /* Adjust margin for better spacing */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.form-container form input[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Style the card container */
+  .card {
+    background: #191c29;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
     cursor: pointer;
-}
-
-.form-container form input[type="submit"]:hover {
-    background-color: #0056b3;
-}
+    font-family: cursive;
+  }
+  
+  .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+  
+  /* Create gradient effects */
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  /* Keyframe animation */
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+  /* Reset link styles */
+  a {
+    color: #212534;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  
+  /* Style form fields */
+  .card form input[type="text"],
+  .card form input[type="email"],
+  .card form input[type="text"][name="phone"],
+  .card form textarea[name="comments"] {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+  }
+  
+  .card form input[type="submit"] {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .card form input[type="submit"]:hover {
+      background-color: #0056b3;
+  }
+  

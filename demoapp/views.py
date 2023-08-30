@@ -116,7 +116,7 @@ def form_survey(request):
         form = surveyForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse("<h2 text-align: center;>Thanks for your feedback</h2>")
+            return HttpResponse("form submitted")
     context = {'form':form}
     #return render(request, 'demoapp/form.html', context)
     return render(request, 'survey.html', context)

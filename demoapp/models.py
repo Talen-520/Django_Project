@@ -32,6 +32,9 @@ class Logger(models.Model):
     last_name = models.CharField( max_length=100)
     time_log = models.TimeField(help_text='enter exact time ')
 
+    def __str__(self):
+        return self.first_name
+
 class Reservation(models.Model):
     name = models.CharField(max_length=100,blank=True)
     contact = models.CharField('phone number',max_length=100)
@@ -49,4 +52,4 @@ class survey(models.Model):
     phone = models.CharField(max_length=13)
     comments = models.CharField(max_length=100, blank=False)
     def __str__(self):
-        return self.name
+        return self.First_name
