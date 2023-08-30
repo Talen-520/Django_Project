@@ -1,6 +1,13 @@
 # Django_Project
 
 ### Project in progress, havent deploy to server yet , working on it...
+
+survey form:
+
+http://127.0.0.1:8000/survey/
+
+![image](https://github.com/Talen-520/Django_Project/assets/63370853/70175821-e838-47e2-a44c-763891bc59c3)
+
 model form:
 
 http://127.0.0.1:8000/home
