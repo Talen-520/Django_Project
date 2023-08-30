@@ -19,7 +19,8 @@ def home(request):
     return HttpResponse(content)
 '''
 #method display request attributes
-def home(request):
+
+def attributes(request):
     path = request.path
     schema = request.scheme
     method = request.method
@@ -94,3 +95,16 @@ def myview(request):
     if not request.user.has_perm('myapp.view_mymodel'): 
         raise PermissionDenied() 
     return HttpResponse() 
+
+from demoapp.forms import LogForm
+
+def form_view(request):
+    form = LogForm()
+    if request.method == 'POST':
+        form = LogForm(request.POST)# update the form object with the contents of post inside the request object
+        if form.is_valid():
+            form.save()
+            return HttpResponse("form saved")
+    context = {'form':form}
+    #return render(request, 'demoapp/form.html', context)
+    return render(request, 'home.html', context)

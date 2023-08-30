@@ -26,3 +26,18 @@ class new_Menu(models.Model):
     cuisine = models.CharField(max_length=100, null=False)
     category_id = models.ForeignKey(new_Menucategory, on_delete=models.PROTECT, default=None) #first is table you connect to(foreign key) , second is what you do when you delete the table
 
+#model form 
+class Logger(models.Model):
+    first_name = models.CharField( max_length=100)
+    last_name = models.CharField( max_length=100)
+    time_log = models.TimeField(help_text='enter exact time ')
+
+class Reservation(models.Model):
+    name = models.CharField(max_length=100,blank=True)
+    contact = models.CharField('phone number',max_length=100)
+    time = models.TimeField()
+    count = models.IntegerField(blank=True)
+    notes = models.CharField(max_length=100,blank=True)
+
+    def __str__(self):
+        return self.name
