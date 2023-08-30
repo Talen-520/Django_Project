@@ -35,3 +35,29 @@ class LogForm(forms.ModelForm):
         model = Logger
         fields = '__all__' #import all fields from model
             #or customized fields with ['first_name', 'last_name', 'time_log']
+from .models import survey   
+from django.core.validators import RegexValidator
+class surveyForm(forms.ModelForm):
+    phone = forms.CharField(
+        label="Phone number:",
+        max_length=13,
+        validators=[
+            RegexValidator(
+                regex=r'^\+1[0-9]{11}$',
+                message="Enter a valid US phone number starting with +1.",
+            ),
+        ],
+            widget=forms.TextInput(attrs={'placeholder': '(+1) 0123456789'}),
+        )
+    comments = forms.CharField(
+        widget=forms.Textarea(attrs={'rows': 5, 'placeholder': 'Enter your comments here'}),
+        max_length=100,
+        required=True,
+    )
+    class Meta:
+        model = survey
+        fields = '__all__'
+        #widgets = {
+        #    'comments': forms.Textarea(attrs={'rows': 5, 'cols': 45}),
+        #}
+

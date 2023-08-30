@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Styled Django Form</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'survey.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <p>Survey Form 2</p>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

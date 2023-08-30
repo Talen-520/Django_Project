@@ -16,5 +16,6 @@ urlpatterns = [
 
     # forms.py
     path('home/', views.form_view) ,
+    path('survey/', views.form_survey),
 
 ] 

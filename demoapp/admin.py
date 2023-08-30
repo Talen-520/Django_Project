@@ -11,3 +11,6 @@ admin.site.register(Logger)
 
 from .models import Reservation
 admin.site.register(Reservation)
+
+from .models import survey
+admin.site.register(survey)

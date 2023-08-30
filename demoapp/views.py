@@ -108,3 +108,15 @@ def form_view(request):
     context = {'form':form}
     #return render(request, 'demoapp/form.html', context)
     return render(request, 'home.html', context)
+
+from demoapp.forms import surveyForm
+def form_survey(request):
+    form = surveyForm()
+    if request.method == 'POST':
+        form = surveyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("<h2 text-align: center;>Thanks for your feedback</h2>")
+    context = {'form':form}
+    #return render(request, 'demoapp/form.html', context)
+    return render(request, 'survey.html', context)
