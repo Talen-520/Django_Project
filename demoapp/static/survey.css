@@ -15,7 +15,7 @@
   /* Reset default styles */
   body {
     min-height: 100vh;
-    background: #212534;
+    background: #212534 !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,26 +100,26 @@
     }
   }
   
-  /* Reset link styles */
-  a {
-    color: #212534;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    margin-top: 2rem;
-  }
-  
-  /* Style form fields */
-  .card form input[type="text"],
-  .card form input[type="email"],
-  .card form input[type="text"][name="phone"],
-  .card form textarea[name="comments"] {
-      width: 90%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 10px;
-  }
+/* Style form fields */
+.card form input[type="text"],
+.card form input[type="email"],
+.card form input[type="text"][name="phone"],
+.card form textarea[name="comments"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+/* Remaining CSS code */
+
   
   .card form input[type="submit"] {
       background-color: #007BFF;

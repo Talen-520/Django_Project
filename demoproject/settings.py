@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'demoapp',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -74,22 +75,25 @@ WSGI_APPLICATION = 'demoproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+#SQLite
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-#for mysql format
+#MySQL 
 '''
 DATABASES = {   
     'default': {   
-        'ENGINE': 'django.db.backends.mysql',   
-        'NAME': 'djangotest',   
-        'USER': 'root',   
-        'PASSWORD': 'password',   
+        #'ENGINE': 'django.db.backends.mysql',   
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'feedback',    #database name
+        'USER': 'admindjango',   
+        'PASSWORD': '86562568HuTao',   
         'HOST': '127.0.0.1',   
-        'PORT': '3306',            
+        'PORT': '3306',       
     }   
 } 
 '''

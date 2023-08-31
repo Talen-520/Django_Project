@@ -1,14 +1,17 @@
 {% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html>
-<head>
-   <title>Styled Django Form</title>
-   <link rel="stylesheet" type="text/css" href="{% static 'survey.css' %}">
-</head>
-<body>
-    <div class="card">
-        <p>Survey Form 2</p>
 
+<head>
+    <title>Styled Django Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'survey.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+
+<body>
+    <div class="p-3 mb-2 bg-dark card">
+        <p>Survey Form 2</p>
         <form action="" method="post">
             {% csrf_token %}
             {{ form.as_p }}
