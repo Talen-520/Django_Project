@@ -6,7 +6,11 @@
 
 > http://127.0.0.1:8000/survey/
 
-https://github.com/Talen-520/Django_Project/assets/63370853/64c34c81-cf60-4810-a5bc-ed0f8be197f9
+
+
+https://github.com/Talen-520/Django_Project/assets/63370853/062a9879-61e4-40a9-b1bc-05a33059e89e
+
+
 
 ### model form:
 
