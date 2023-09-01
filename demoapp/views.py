@@ -120,3 +120,8 @@ def form_survey(request):
     context = {'form':form}
     #return render(request, 'demoapp/form.html', context)
     return render(request, 'survey.html', context)
+
+#dynamic content
+def about(request):
+    abount_content = {'about': "Base in Chicago, Illinonios, Little Lemon is a blalalalala "} #about is key mapped in the html page see {{about}}
+    return render(request,"about.html",abount_content)
