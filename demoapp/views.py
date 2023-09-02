@@ -10,9 +10,25 @@ from datetime import datetime
 def index(request): 
     return HttpResponse("Hello, world. This is the index view of Demoapp.") 
 
-def menu_by_id(request,menu_id):
-    menu = Menu.objects.get(pk=menu_id)
-    return HttpResponse(f"{menue.menu_item} : Type of {menue.cuisine} cuisine")
+def menu(request):
+    #menuitem = {"name" : "Greek salad"} #single item use {{name}}
+    #mutilple items
+    #use {% for item in mains %}
+    #{{}}
+    #{% endfor %}
+    menuitem = {'mains':[
+        {"name":"Greek salad","price":"12"},
+        {"name": 'shawarama',"price":"15"},
+        {"name": 'pizza',"price":"20"},
+        {"name": 'pasta',"price":"25"},
+        ]}
+    return render(request,'menu.html',menuitem)
+from .models import Menu    
+#load database to display content
+def menu_by_id(request):
+    newmenu = Menu.objects.all()
+    newmenu_dict = {"menu":newmenu}
+    return render(request,"menu_cards.html",newmenu_dict)
 '''
 def home(request):
     content = "<html><body><h1>welcome to little lemon </h1></body></html>"
@@ -45,9 +61,7 @@ def attributes(request):
 def display_date(request):
     date_joined = datetime.today().year
     return HttpResponse(date_joined)
-def menu(request):
-    text = """<h1 style = "color:blue">This is little lemon again </h1>"""
-    return HttpResponse(text)
+
 #render webpage 
 from django.template import loader 
 def loader(request): 
@@ -125,3 +139,70 @@ def form_survey(request):
 def about(request):
     abount_content = {'about': "Base in Chicago, Illinonios, Little Lemon is a blalalalala "} #about is key mapped in the html page see {{about}}
     return render(request,"about.html",abount_content)
+
+#loging 
+'''
+from demoapp.forms import LogForm
+def form_view(request):
+    form = LogForm()
+    if request.method == 'POST':
+        form = LogForm(request.POST)# update the form object with the contents of post inside the request object
+        if form.is_valid():
+            form.save()
+            return HttpResponse("form saved")
+    context = {'form':form}
+    #return render(request, 'demoapp/form.html', context)
+    return render(request, 'home.html', context)
+
+#load database to display content
+from .models import Menu    
+def menu_by_id(request):
+    newmenu = Menu.objects.all()
+    newmenu_dict = {"menu":newmenu}
+    return render(request,"menu_cards.html",newmenu_dict)
+'''
+
+#signup user
+from .models import userinformation
+from django.contrib.auth import login
+from django.contrib.auth import authenticate
+
+
+from demoapp.forms import userform
+def signup(request):
+    form = userform()
+    if request.method == 'POST':
+        form = userform(request.POST)# update the form object with the contents of post inside the request object
+        if form.is_valid():
+            form.save()
+            return HttpResponse("signup successed")
+    context = {'form':form}
+    #return render(request, 'demoapp/form.html', context)
+    return render(request, 'signup.html', context)
+
+#login user
+from demoapp.forms import userform
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
+
+def login(request):
+    if request.method == 'POST':
+        form = userform(request.POST)
+        if form.is_valid():
+            # Get the user input from the form
+            user_input = form.cleaned_data['username']
+            pass_input = form.cleaned_data['password']
+            # Check if the user input exists in the database
+            if userinformation.objects.filter(username=user_input).exists() and userinformation.objects.filter(password=pass_input).exists() :
+                # Match found in the database
+                return HttpResponse("Login successed")
+            else:
+                # No match found in the database
+                #return HttpResponse("invaild password or username")
+                error_message = "Invalid password or username"
+                # Redirect back to the login form
+                return render(request, 'login.html', {'form': form, 'error_message': error_message})
+    else:
+        form = userform()
+    return render(request, 'login.html', {'form': form})  # Replace 'login.html' with your login template name

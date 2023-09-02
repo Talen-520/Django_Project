@@ -1,14 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Menu(models.Model):
-    name = models.CharField(max_length=100)
-    cuisine = models.CharField(max_length=30)
-    price = models.IntegerField()
-    
-    def __str__(self):#more readable in shell
-        return self.name
-
 class Person_name (models.Model): 
     name = models.CharField(max_length=20) 
     email = models.EmailField() 
@@ -53,3 +45,18 @@ class survey(models.Model):
     comments = models.CharField(max_length=100, blank=False)
     def __str__(self):
         return self.First_name
+
+class Menu(models.Model):
+    name = models.CharField(max_length=100)
+    #cuisine = models.CharField(max_length=30)
+    price = models.IntegerField()
+    
+    def __str__(self):#more readable in shell
+        return self.name
+
+class userinformation(models.Model):
+    username = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.username

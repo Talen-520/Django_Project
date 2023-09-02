@@ -4,6 +4,7 @@ from . import models
 admin.site.register(models.Person_name)
 admin.site.register(models.new_Menucategory)
 admin.site.register(models.new_Menu)
+admin.site.register(models.Menu)
 
 #register model
 from .models import Logger
@@ -14,3 +15,6 @@ admin.site.register(Reservation)
 
 from .models import survey
 admin.site.register(survey)
+
+from .models import userinformation
+admin.site.register(userinformation)

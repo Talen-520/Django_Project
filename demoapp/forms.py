@@ -64,3 +64,8 @@ class surveyForm(forms.ModelForm):
         #    'comments': forms.Textarea(attrs={'rows': 5, 'cols': 45}),
         #}
 
+from .models import userinformation
+class userform(forms.ModelForm):
+    class Meta:
+        model = userinformation
+        fields = '__all__'

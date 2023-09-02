@@ -1,0 +1,41 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic table</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <style>
+        /* Custom CSS to center the table */
+        .center-table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="center-table">
+                    <div class="p-3 mb-2">
+                        <table>
+                            {% for item in mains %}
+                            <tr>
+                                <td style = "border: 1px solid black;">{{item.name}}</td>
+                                <td style = "border: 1px solid black;">{{item.price}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

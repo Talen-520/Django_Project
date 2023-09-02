@@ -8,6 +8,7 @@ urlpatterns = [
     path('attributes/',views.attributes), #(http://127.0.0.1:8000/home, home function in views.py)
     path('display_date/',views.display_date), 
     path('menu/',views.menu),
+    path('menu_card/',views.menu_by_id),
     #path('loader/',views.loader),
     path('ServerStatus/',views.ServerStatus),
     path('dishes/<str:dish>',views.menuitems),#http://127.0.0.1:8000/dishes/pasta
@@ -18,5 +19,8 @@ urlpatterns = [
     path('home/', views.form_view) ,
     path('survey/', views.form_survey),
     path('about/', views.about),
+
+    path('signup/', views.signup),
+    path('login/', views.login,name='login'),
 
 ] 
