@@ -59,7 +59,9 @@ check my models by  tensorflow project script
 
 # hands on guidance 
 
-# create virtual environment 
+https://docs.google.com/document/d/1S2MVuxbYDFTQKQGnBV52b1fg4Te7RFJi17YFZcsbLFg/edit#heading=h.6zjp9241ruon
+
+### create virtual environment 
 
 > python -m venv c:\Django 
 
@@ -67,31 +69,31 @@ check my models by  tensorflow project script
 
 > Cd\django>bin\activate 
 
-# install django
+### install django
 
 C:\Django> pip3 install django
 
-#create project 
+### create project 
 
 > C:\djenv>django-admin startproject demoproject .
 
-#start app
+### start app
 
 >python manage.py startapp <name of app>
 
 
-# makemigrations - generating a database table
+### makemigrations - generating a database table
 
 > python manage.py makemigrations
 
-# migrate - synchronizes the database state with the currently declared models and migrations
+### migrate - synchronizes the database state with the currently declared models and migrations
 
 > python manage.py migrate
 
-# open python shell inside project 
+### open python shell inside project 
 
 >python manage.py shell
 
-# run server
+### run server
 
 > python manage.py runserver
