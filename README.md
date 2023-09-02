@@ -14,8 +14,9 @@ https://github.com/Talen-520/Django_Project/assets/63370853/062a9879-61e4-40a9-b
 
 https://github.com/Talen-520/Django_Project/assets/63370853/3c6f5e2f-0256-45ea-a07c-11dd99173bd8
 
->> http://127.0.0.1:8000/signup
->> http://127.0.0.1:8000/login
+> http://127.0.0.1:8000/signup
+
+> http://127.0.0.1:8000/login
 
 ### model form:
 
