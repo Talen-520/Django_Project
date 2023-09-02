@@ -1,4 +1,4 @@
-# Django_Project
+# Django_Project Little Lemon
 
 ### Project in progress, havent deploy to server yet , working on it...
 
