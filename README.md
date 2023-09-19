@@ -2,6 +2,8 @@
 
 ### Project in progress, havent deploy to server yet , working on it...
 
+http://littlelemon.techtaohu.com/
+
 ### survey form:
 
 > http://127.0.0.1:8000/survey/
