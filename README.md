@@ -67,9 +67,9 @@ https://docs.google.com/document/d/1S2MVuxbYDFTQKQGnBV52b1fg4Te7RFJi17YFZcsbLFg/
 
 > python -m venv c:\Django 
 
-#activation under bin folder
+#activation under bin or scripts folder 
 
-> Cd\django>bin\activate 
+> Cd \django>bin\activate 
 
 ### install django
 
